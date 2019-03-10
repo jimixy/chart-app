@@ -64,7 +64,7 @@ var webpackConf = {
   mode: 'none',
   plugins: [
     new MpxWebpackPlugin({
-      mode: 'ali'
+      mode: 'wx'
     })
   ],
   resolve: {

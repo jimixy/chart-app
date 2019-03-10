@@ -7,7 +7,7 @@
 
   createPage({
     onLoad () {}
-  }, Page)
+  })
 </script>
 
 <script type="application/json">

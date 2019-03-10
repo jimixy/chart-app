@@ -1,6 +1,6 @@
 <template>
   <view class="list">
-    <view a:for="{{listData}}" a:key="index">{{item}}</view>
+    <view wx:for="{{listData}}" wx:key="index">{{item}}2423423</view>
   </view>
 </template>
 
@@ -11,7 +11,7 @@
     data: {
       listData: ['手机', '电视', '电脑']
     }
-  }, Component)
+  })
 </script>
 
 
