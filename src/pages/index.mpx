@@ -1,5 +1,8 @@
 <template>
-  <list></list>
+    <div>
+        <list></list>
+        <van-button type="primary">按钮</van-button>
+    </div>
 </template>
 
 <script>
@@ -13,7 +16,8 @@
 <script type="application/json">
   {
     "usingComponents": {
-      "list": "../components/list"
+      "list": "../components/list",
+      "van-button": "../../static/vant-ui/button/index"
     }
   }
 </script>
