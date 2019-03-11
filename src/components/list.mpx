@@ -16,8 +16,10 @@
 
 
 <style lang="stylus">
+  @import "../assets/styles/variables"
   .list
     background-color red
+    color $menu-dark-title
 </style>
 
 <script type="application/json">

@@ -3,8 +3,8 @@
   App({})
 </script>
 
-<style>
-
+<style lang="stylus">
+  @import './assets/styles/index'
 </style>
 
 <script type="application/json">
