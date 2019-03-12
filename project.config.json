@@ -2,11 +2,11 @@
 	"miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
 	"setting": {
-		"newFeature": true,
-		"urlCheck": true,
-		"es6": false,
+		"urlCheck": false,
+		"es6": true,
 		"postcss": true,
 		"minified": false,
+		"newFeature": true,
 		"autoAudits": false
 	},
 	"appid": "touristappid",

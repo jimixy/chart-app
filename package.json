@@ -14,7 +14,9 @@
   "author": "jimi <2310385247@qq.com>",
   "license": "ISC",
   "dependencies": {
-    "@mpxjs/core": "^1.1.0"
+    "@mpxjs/core": "^1.1.0",
+    "@mpxjs/fetch": "^1.0.14",
+    "@mpxjs/promisify": "^1.0.14"
   },
   "devDependencies": {
     "@mpxjs/webpack-plugin": "^1.1.0",

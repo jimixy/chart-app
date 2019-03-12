@@ -1,7 +1,15 @@
 <script>
-  // app.js
-  App({})
-</script>
+
+import './mixin/index'
+
+App({
+  onLaunch () {
+  },
+  onShow (options) {
+    console.log('onShow', options)
+  }
+})
+  </script>
 
 <style lang="stylus">
   @import './assets/styles/index'
@@ -10,7 +18,19 @@
 <script type="application/json">
   {
     "pages": [
-      "./pages/index"
-    ]
+      "./pages/home/index"
+    ],
+    "window": {
+      "navigationBarTitleText": "测试",
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTextStyle": "black",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#F8F9FB"
+    },
+    "debug": true,
+    "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 30000
+    }
   }
 </script>

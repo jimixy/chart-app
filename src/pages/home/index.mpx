@@ -1,0 +1,77 @@
+<template minapp='native' xlang='wxml'>
+  <view class="container">
+    <list class="mt10 text-c"></list>
+    <van-button type="primary">主要按钮</van-button>
+    <van-toast id="van-toast" />
+  </view>
+</template>
+
+<script>
+import mpx, { createPage } from '@mpxjs/core'
+import IndexApi from '../../api/Index'
+import Toast from '../../../static/vant-ui/toast/toast'
+
+mpx.prototype.$toast = Toast
+
+createPage({
+  data: {
+    indexInfo: {
+      list: []
+    }
+  },
+  onShow () {
+    // console.log('indexInfo', this.indexInfo.list)
+    console.log('this', this.$toast, mpx.$toast)
+  },
+  onLoad () {
+    this.getIndex()
+  },
+  onHide () {
+    // 页面切入后台执行
+    console.log('page hide')
+  },
+  methods: {
+    getIndex () {
+      Toast.success({
+        duration: 0, // 持续展示 toast
+        forbidClick: true, // 禁用背景点击
+        message: '倒计时 3 秒'
+      })
+      console.log('resssss', Toast)
+      IndexApi.index()
+        .then(res => {
+          this.indexInfo = res
+        })
+        .catch(e => {
+          console.log(e)
+        })
+    },
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh () {},
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom () {},
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage () {}
+  }
+})
+</script>
+
+<style lang='stylus'>
+.container {
+}
+</style>
+<script type='application/json' lang='json'>
+    {
+    "usingComponents": {
+        "list": "../../components/list",
+        "van-button": "../../../static/vant-ui/button/index",
+        "van-toast": "../../../static/vant-ui/toast/index"
+    }
+    }
+</script>
