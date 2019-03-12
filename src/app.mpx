@@ -14,7 +14,7 @@ App({
   onLaunch () {
   },
   onShow (options) {
-    console.log('onShow', options)
+    // console.log('onShow', options)
   }
 
 })
@@ -27,6 +27,7 @@ App({
 <script type="application/json">
   {
     "pages": [
+      "./pages/test/index",
       "./pages/home/index"
     ],
     "window": {
@@ -36,7 +37,7 @@ App({
       "backgroundTextStyle": "dark",
       "backgroundColor": "#F8F9FB"
     },
-    "debug": true,
+    "debug": false,
     "networkTimeout": {
       "request": 10000,
       "downloadFile": 30000

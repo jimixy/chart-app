@@ -1,0 +1,75 @@
+<template minapp='native' xlang='wxml'>
+  <view class='container'>
+    <view class="chunk color1">
+      1
+    </view>
+    <view class="chunk color2">
+      2
+    </view>
+    <view class="chunk color3">
+      3
+    </view>
+  </view>
+</template>
+
+<script>
+import { createPage } from '@mpxjs/core'
+createPage({
+  data: {
+  },
+  onShow () {
+    // 所在页面显示之后就会执行一次
+    // console.log('page show')
+  },
+  onHide () {
+    // 页面切入后台执行
+    // console.log('page hide')
+  },
+  methods: {
+
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+    */
+    onPullDownRefresh () {},
+    /**
+     * 页面上拉触底事件的处理函数
+    */
+    onReachBottom () {},
+    /**
+       * 用户点击右上角分享
+     */
+    onShareAppMessage () {}
+  }
+})
+</script>
+
+<style lang='stylus'>
+  .container{
+    display:flex; // 所有子元素为行内元素了, 容器宽度100%，高度自适应;
+    flex-direction:column-reverse; // column子元素竖向排列，row为默认（横向排列）;row-reverse反向排列 column-reverse
+    height 400rpx
+    background-color #999
+    justify-content flex-end // 子元素对齐方式
+
+  } 
+
+  .chunk{
+    width 100rpx
+    height 100rpx
+  }
+  .color1{
+    background-color brown
+  }
+  .color2{
+    background-color aqua
+  }
+  .color3
+    background-color blue
+</style>
+<script  type='application/json' lang='json'>
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {}
+}
+</script>
+

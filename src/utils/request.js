@@ -6,15 +6,9 @@ import Token from '../api/Token'
 
 mpx.use(mpxFetch)
 
-wx.showToast({
-  title: '支付失败222',
-  icon: 'none',
-  duration: 1000 * 100
-})
-
 // 请求拦截器
 mpx.xfetch.interceptors.request.use(function (config) {
-  console.log(config)
+  // console.log(config)
   return new Promise((resolve, reject) => {
     Token.getToken().then(res => {
       if (res) {

@@ -12,9 +12,8 @@ import IndexApi from '../../api/Index'
 import Toast from '../../../static/vant-ui/toast/toast'
 
 mpx.prototype.$toast = Toast
-
-var app = getApp()
-console.log('getApp', app)
+// var app = getApp()
+// console.log('getApp', app)
 
 createPage({
   data: {
