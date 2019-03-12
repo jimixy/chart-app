@@ -46,12 +46,40 @@ export default class WxUtils {
     return new Promise((resolve, reject) => {
       param.complete = res => {
         if (res.errMsg.toLocaleLowerCase() === 'requestPayment:ok'.toLocaleLowerCase()) {
+          wx.showToast({
+            title: '支付成功',
+            icon: 'success',
+            duration: 1000
+          })
           resolve(res)
         } else {
+          wx.showToast({
+            title: '支付失败',
+            icon: 'none',
+            duration: 1000
+          })
           reject(res)
         }
       }
       wx.requestPayment(param)
+    })
+  }
+
+  static wxDownload (config) {
+    return new Promise((resolve, reject) => {
+      wx.downloadFile({
+        url: config.url,
+        success: function (res) {
+          resolve(res)
+        },
+        fail: function (res) {
+          wx.showToast({
+            title: '下载失败',
+            icon: 'none',
+            duration: 1000
+          })
+        }
+      })
     })
   }
 }

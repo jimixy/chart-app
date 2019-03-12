@@ -4,12 +4,13 @@ import mpxFetch from '@mpxjs/fetch'
 import Config from '../config/index'
 import Token from '../api/Token'
 
-import Toast from '../../static/vant-ui/toast/toast'
-
-console.log('mpx', mpx)
-// Toast.success('成功文案')
-
 mpx.use(mpxFetch)
+
+wx.showToast({
+  title: '支付失败222',
+  icon: 'none',
+  duration: 1000 * 100
+})
 
 // 请求拦截器
 mpx.xfetch.interceptors.request.use(function (config) {
@@ -81,7 +82,11 @@ const request = {
       data: data
     }).catch(e => {
       if (e.httpCode === 404) {
-        Toast('请求有误')
+        wx.showToast({
+          title: '请求有误',
+          icon: 'none',
+          duration: 1000
+        })
         console.log('请求有误', e)
       }
     })

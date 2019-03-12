@@ -10,6 +10,6 @@ mpx.mixin({
   },
   methods: {},
   tapNavTo (e) {
-    console.log(e)
+    console.log('tapNavTo', e)
   }
 })

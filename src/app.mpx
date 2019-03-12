@@ -3,11 +3,20 @@
 import './mixin/index'
 
 App({
+  GlobalData: {
+    routineStyle: '#ffffff',
+    uid: null,
+    openPages: '',
+    spid: 0,
+    urlImages: '',
+    url: 'https://maya.shandaershoushichang.cn'
+  },
   onLaunch () {
   },
   onShow (options) {
     console.log('onShow', options)
   }
+
 })
   </script>
 

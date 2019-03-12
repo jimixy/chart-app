@@ -2,7 +2,7 @@
   <view class="container">
     <list class="mt10 text-c"></list>
     <van-button type="primary">主要按钮</van-button>
-    <van-toast id="van-toast" />
+    <van-toast id="van-toast2" />
   </view>
 </template>
 
@@ -13,6 +13,9 @@ import Toast from '../../../static/vant-ui/toast/toast'
 
 mpx.prototype.$toast = Toast
 
+var app = getApp()
+console.log('getApp', app)
+
 createPage({
   data: {
     indexInfo: {
@@ -21,7 +24,7 @@ createPage({
   },
   onShow () {
     // console.log('indexInfo', this.indexInfo.list)
-    console.log('this', this.$toast, mpx.$toast)
+    console.log('this', this, this.$toast)
   },
   onLoad () {
     this.getIndex()
@@ -32,12 +35,12 @@ createPage({
   },
   methods: {
     getIndex () {
-      Toast.success({
-        duration: 0, // 持续展示 toast
-        forbidClick: true, // 禁用背景点击
-        message: '倒计时 3 秒'
-      })
-      console.log('resssss', Toast)
+      // Toast.success({
+      //   duration: 0, // 持续展示 toast
+      //   forbidClick: true, // 禁用背景点击
+      //   message: '倒计时 3 秒',
+      //   selector: '#van-toast2'
+      // })
       IndexApi.index()
         .then(res => {
           this.indexInfo = res

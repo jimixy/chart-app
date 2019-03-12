@@ -10,6 +10,9 @@
   createComponent({
     data: {
       listData: ['手机', '电视', '电脑']
+    },
+    pageShow () {
+      console.log('this--222', this)
     }
   })
 </script>
