@@ -12,8 +12,9 @@ var webpackConf = {
         test: /\.mpx$/,
         use: MpxWebpackPlugin.loader({
           transRpx: {
-            mode: 'only',
-            comment: 'use rpx',
+            mode: 'only', // 当前模式
+            comment: 'use px',
+            designWidth: 375, // 这个更方便
             include: resolve('src')
           }
         })
@@ -64,7 +65,7 @@ var webpackConf = {
   mode: 'none',
   plugins: [
     new MpxWebpackPlugin({
-      mode: 'wx'
+      mode: 'wx' // 当前模式 微信小程序
     })
   ],
   resolve: {

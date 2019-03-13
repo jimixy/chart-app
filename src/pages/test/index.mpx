@@ -1,14 +1,67 @@
 <template minapp='native' xlang='wxml'>
   <view class='container'>
+    
+    <van-cell-group border="{{ false }}" custom-class="j-cell-group">
+        <van-cell custom-class="j-cell" >
+            <view slot="icon" class="j-cell-icon">
+                icon
+            </view>
+            <view slot="title" class="j-cell-title">
+                <text>发:</text>
+            </view>
+            <view class="j-cell-value">
+                <div class="j-cell-value1">
+                    测试文字1测试文字1测试文字1测试文字1测试文字1测试文字1                
+                </div>
+                <div class="j-cell-value2">
+                    测试文字2                  
+                </div>
+            </view>
+            <view slot="right-icon" class="j-cell-right-icon">
+                right-icon
+            </view>
+        </van-cell>
+    </van-cell-group>
+
+    <!-- 表单 -->
+    <van-cell-group border="{{ false }}" custom-class="j-cell-group">
+        <van-field
+            class="j-field"
+            value="{{ username }}"
+            required
+            clearable
+            label="用户名"
+            icon="question-o"
+            placeholder="请输入用户名"
+            bind:click-icon="onClickIcon"
+        />
+        <van-field
+            class="j-field"
+            value="{{ password }}"
+            type="password"
+            label="密码"
+            placeholder="请输入密码"
+            required
+            border="{{ false }}"
+        />
+    </van-cell-group>
+
+    <!-- <van-row custom-class="j-row">
+        <van-col span="24">
+            站一整行
+        </van-col>
+    </van-row> -->
+
     <view class="chunk color1">
-      1
+    1
     </view>
     <view class="chunk color2">
-      2
+    2
     </view>
     <view class="chunk color3">
-      3
+    3
     </view>
+
   </view>
 </template>
 
@@ -16,6 +69,12 @@
 import { createPage } from '@mpxjs/core'
 createPage({
   data: {
+    test: 1231,
+    minDate: new Date().getTime(),
+    maxDate: new Date(2019, 10, 1).getTime(),
+    currentDate: new Date().getTime(),
+    username: '',
+    password: ''
   },
   onShow () {
     // 所在页面显示之后就会执行一次
@@ -45,17 +104,19 @@ createPage({
 
 <style lang='stylus'>
   .container{
-    display:flex; // 所有子元素为行内元素了, 容器宽度100%，高度自适应;
-    flex-direction:column-reverse; // column子元素竖向排列，row为默认（横向排列）;row-reverse反向排列 column-reverse
-    height 400rpx
+    display flex // 所有子元素为行内元素了, 容器宽度100%，高度自适应;
+    display -webkit-flex
+    height 100vh
+    flex-direction column // column子元素竖向排列，row为默认（横向排列）;row-reverse反向排列 column-reverse
     background-color #999
-    justify-content flex-end // 子元素对齐方式
-
+    // justify-content flex-start // 子元素对齐方式
+    overflow hidden
+    // align-items stretch
   } 
 
   .chunk{
-    width 100rpx
-    height 100rpx
+    width 100px 
+    height 100px
   }
   .color1{
     background-color brown
@@ -63,13 +124,21 @@ createPage({
   .color2{
     background-color aqua
   }
-  .color3
+  .color3{
     background-color blue
+  }
 </style>
 <script  type='application/json' lang='json'>
 {
   "navigationBarTitleText": "搜索",
-  "usingComponents": {}
+  "usingComponents": {
+      "van-cell": "../../../static/vant-ui/cell/index",
+      "van-cell-group": "../../../static/vant-ui/cell-group/index",
+      "van-row": "../../../static/vant-ui/row/index",
+      "van-col": "../../../static/vant-ui/col/index",
+      "van-field": "../../../static/vant-ui/field/index",
+      "van-datetime-picker": "../../../static/vant-ui/datetime-picker/index"
+  }
 }
 </script>
 
