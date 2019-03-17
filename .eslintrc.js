@@ -14,6 +14,7 @@ module.exports = {
   'globals': {
     'wx': true,
     'getApp': true,
-    'App': true
+    'App': true,
+    'getCurrentPages': true
   }
 }
