@@ -12,8 +12,8 @@ createComponent({
     like: {
       type: Boolean, // 必填
       value: false,
-      observer: function () {
-
+      observer: function (newVal, oldVal, changedPath) {
+        console.log('val', newVal, oldVal, changedPath)
       }
     }
   },

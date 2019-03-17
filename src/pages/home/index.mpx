@@ -2,6 +2,7 @@
   <view class="container">
     <list class="mt10 text-c"></list>
     <van-button type="primary">主要按钮</van-button>
+    
     <van-toast id="van-toast2" />
 
     <like></like>
@@ -10,11 +11,10 @@
 </template>
 
 <script>
-import mpx, { createPage } from '@mpxjs/core'
+import { createPage } from '@mpxjs/core'
 import IndexApi from '../../api/Index'
-import Toast from '../../../static/vant-ui/toast/toast'
+// import Toast from '../../../static/vant-ui/toast/toast'
 
-mpx.prototype.$toast = Toast
 // var app = getApp()
 // console.log('getApp', app)
 

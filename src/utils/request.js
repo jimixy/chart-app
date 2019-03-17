@@ -4,6 +4,17 @@ import mpxFetch from '@mpxjs/fetch'
 import Config from '../config/index'
 import Token from '../api/Token'
 
+setTimeout(() => {
+  console.log('getCurrentPages', getCurrentPages())
+  console.log('mpx', mpx, mpx.toast({
+    selector: '#van-toast2',
+    message: '123321231'
+  }), mpx.prototype.testHello)
+}, 200)
+// console.log('mpx', mpx, mpx.toast({
+//   selector: '#van-toast2'
+// }), mpx.prototype.testHello)
+
 mpx.use(mpxFetch)
 
 // 请求拦截器

@@ -1,6 +1,11 @@
 <script>
 
+import mpx from '@mpxjs/core'
+
 import './mixin/index'
+
+import plugin from './plugin'
+mpx.use(plugin)
 
 App({
   GlobalData: {
