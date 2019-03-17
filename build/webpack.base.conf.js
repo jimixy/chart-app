@@ -12,7 +12,7 @@ var webpackConf = {
         test: /\.mpx$/,
         use: MpxWebpackPlugin.loader({
           transRpx: {
-            mode: 'only', // 当前模式
+            mode: 'all', // 当前模式
             comment: 'use px',
             designWidth: 375, // 这个更方便
             include: resolve('src')

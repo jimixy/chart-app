@@ -3,6 +3,9 @@
     <list class="mt10 text-c"></list>
     <van-button type="primary">主要按钮</van-button>
     <van-toast id="van-toast2" />
+
+    <like></like>
+
   </view>
 </template>
 
@@ -72,6 +75,7 @@ createPage({
     {
     "usingComponents": {
         "list": "../../components/list",
+        "like": "../../components/like",
         "van-button": "../../../static/vant-ui/button/index",
         "van-toast": "../../../static/vant-ui/toast/index"
     }

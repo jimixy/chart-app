@@ -2,7 +2,7 @@ import request from '../utils/request'
 
 class Index {
   static index () {
-    return request.get('/sys/account/getBasicInfo', {})
+    return request.get('/classic/latest', {})
   }
 }
 

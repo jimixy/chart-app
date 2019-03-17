@@ -8,13 +8,16 @@ mpx.use(mpxFetch)
 
 // 请求拦截器
 mpx.xfetch.interceptors.request.use(function (config) {
-  // console.log(config)
+  // console.log('request-config', config)
   return new Promise((resolve, reject) => {
     Token.getToken().then(res => {
       if (res) {
-        config.header = {
-          'Authorization': res
-        }
+        config.header = Object.assign({}, {
+          'Authorization': res,
+          'content-type': 'application/json',
+          'appkey': Config.appkey
+        },
+        config.header)
         resolve(config)
       }
     })
@@ -68,12 +71,13 @@ function interceptorsResponse (response) {
 mpx.xfetch.interceptors.response.use(interceptorsResponse)
 
 const request = {
-  done (url, data = {}, type = 'get') {
+  done (url, data = {}, method = 'get', header = {}) {
     url = url.indexOf('https') === -1 ? Config.apiUrl + url : url
     return mpx.xfetch.fetch({
-      url: url,
-      method: type,
-      data: data
+      url,
+      method,
+      data,
+      header
     }).catch(e => {
       if (e.httpCode === 404) {
         wx.showToast({
@@ -85,11 +89,11 @@ const request = {
       }
     })
   },
-  post (url, data = {}) {
-    return request.done(url, data, 'POST')
+  post (url, data = {}, header = {}) {
+    return request.done(url, data, 'POST', header)
   },
-  get (url, data = {}) {
-    return request.done(url, data, 'GET')
+  get (url, data = {}, header = {}) {
+    return request.done(url, data, 'GET', header)
   }
 }
 

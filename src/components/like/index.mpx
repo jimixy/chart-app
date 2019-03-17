@@ -1,0 +1,61 @@
+<template minapp='native' xlang='wxml'>
+  <view bind:tap="onLike" class='container'>
+    <image src="./images/like.png" />
+    <text>{{count}}</text>
+  </view>
+</template>
+
+<script>
+import { createComponent } from '@mpxjs/core'
+createComponent({
+  properties: {
+    like: {
+      type: Boolean, // 必填
+      value: false,
+      observer: function () {
+
+      }
+    }
+  },
+  data: {
+    count: 99
+  },
+  pageShow () {
+    // 所在页面显示之后就会执行一次
+    console.log('page show')
+  },
+  pageHide () {
+    // 页面切入后台执行
+    console.log('page hide')
+  },
+  methods: {
+    onLike () {
+      console.log('被点击了', this)
+      this.count++
+    }
+  }
+})
+</script>
+
+<style lang='stylus'>
+ .container {
+  display inline-flex
+  // flex-flow row
+  image {
+    width:32px;
+    height:28px;
+    vertical-align middle
+  }  
+  text{
+    // font-family: "PingFangSC-Thin";
+    // font-size: 48rpx;
+    color: #bbb;
+  } 
+} 
+</style>
+<script  type='application/json' lang='json'>
+{ 
+ "component": true
+}
+</script>
+

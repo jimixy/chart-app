@@ -27,8 +27,8 @@ App({
 <script type="application/json">
   {
     "pages": [
-      "./pages/test/index",
-      "./pages/home/index"
+      "./pages/home/index",
+      "./pages/test/index"
     ],
     "window": {
       "navigationBarTitleText": "测试",
