@@ -3,9 +3,9 @@
     <list class="mt10 text-c"></list>
     <van-button type="primary">主要按钮</van-button>
     
-    <van-toast id="van-toast2" />
+    <van-toast id="van-toast" />
 
-    <like></like>
+    <like info="{{indexInfo}}" bind:myEvent="onLike"></like>
 
   </view>
 </template>
@@ -36,12 +36,15 @@ createPage({
     console.log('page hide')
   },
   methods: {
+    onLike (e) {
+      console.log('onlike', e.detail)
+    },
     getIndex () {
       // Toast.success({
       //   duration: 0, // 持续展示 toast
       //   forbidClick: true, // 禁用背景点击
       //   message: '倒计时 3 秒',
-      //   selector: '#van-toast2'
+      //   selector: '#van-toast'
       // })
       IndexApi.index()
         .then(res => {

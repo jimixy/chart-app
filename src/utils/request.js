@@ -5,15 +5,12 @@ import Config from '../config/index'
 import Token from '../api/Token'
 
 setTimeout(() => {
+  // 延迟才能获得getCurrentPages数据
   console.log('getCurrentPages', getCurrentPages())
   console.log('mpx', mpx, mpx.toast({
-    selector: '#van-toast2',
     message: '123321231'
   }), mpx.prototype.testHello)
 }, 200)
-// console.log('mpx', mpx, mpx.toast({
-//   selector: '#van-toast2'
-// }), mpx.prototype.testHello)
 
 mpx.use(mpxFetch)
 

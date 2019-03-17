@@ -30,8 +30,10 @@ createComponent({
   },
   methods: {
     onLike () {
-      console.log('被点击了', this)
       this.count++
+      this.triggerEvent('myEvent', {
+        count: this.count
+      })
     }
   }
 })
